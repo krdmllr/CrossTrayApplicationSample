@@ -1,15 +1,76 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+﻿<?xml version="1.0" encoding="utf-8"?>
+
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
+             BackgroundColor="Black"
              x:Class="CrossTrayIconSample.Shared.TrayPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ButtonDefault" TargetType="{x:Type Button}">
+
+                <Setter Property="FontSize" Value="40" />
+            </Style>
+            <Style TargetType="{x:Type Button}" BasedOn="{StaticResource ButtonDefault}">
+                <Setter Property="BackgroundColor" Value="White" />
+            </Style>
+            <Style TargetType="{x:Type Button}" x:Key="OperatorButton" BasedOn="{StaticResource ButtonDefault}">
+                <Setter Property="BackgroundColor" Value="DarkOrange" />
+            </Style>
+        </ResourceDictionary>
+
+    </ContentPage.Resources>
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid RowSpacing="1" ColumnSpacing="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="{Binding Source={x:Reference Input7}, Path=BindingContext.Width}" />
+                <RowDefinition Height="{Binding Source={x:Reference Input7}, Path=BindingContext.WidthRequest}" />
+                <RowDefinition Height="{Binding Source={x:Reference Input7}, Path=BindingContext.WidthRequest}" />
+                <RowDefinition Height="{Binding Source={x:Reference Input7}, Path=BindingContext.WidthRequest}" />
+                <RowDefinition Height="{Binding Source={x:Reference Input7}, Path=BindingContext.WidthRequest}" />
+            </Grid.RowDefinitions>
+            <Label Text="0" MaxLines="1" LineBreakMode="TailTruncation" x:Name="TotalValue" VerticalOptions="Start"
+                   HorizontalOptions="End" Margin="5" TextColor="White" Grid.ColumnSpan="4" FontSize="10" />
+            <Label Text="0" x:Name="Value" LineBreakMode="TailTruncation" VerticalOptions="Center"
+                   HorizontalOptions="End" Margin="5" TextColor="White" Grid.ColumnSpan="4" FontSize="40" />
+
+            <Button Clicked="OnClicked" x:Name="Input7" Text="7" Grid.Column="0" Grid.Row="1" />
+            <Button Clicked="OnClicked" x:Name="Input8" Text="8" Grid.Column="1" Grid.Row="1" />
+            <Button Clicked="OnClicked" x:Name="Input9" Text="9" Grid.Column="2" Grid.Row="1" />
+            <Button Clicked="OnClicked" x:Name="InputDivide" Text="/" Grid.Column="3" Grid.Row="1"
+                    Style="{StaticResource OperatorButton}" />
+
+            <Button Clicked="OnClicked" x:Name="Input4" Text="4" Grid.Column="0" Grid.Row="2" />
+            <Button Clicked="OnClicked" x:Name="Input5" Text="5" Grid.Column="1" Grid.Row="2" />
+            <Button Clicked="OnClicked" x:Name="Input6" Text="6" Grid.Column="2" Grid.Row="2" />
+            <Button Clicked="OnClicked" x:Name="InputMultiply" Text="X" Grid.Column="3" Grid.Row="2"
+                    Style="{StaticResource OperatorButton}" />
+
+            <Button Clicked="OnClicked" x:Name="Input1" Text="1" Grid.Column="0" Grid.Row="3" />
+            <Button Clicked="OnClicked" x:Name="Input2" Text="2" Grid.Column="1" Grid.Row="3" />
+            <Button Clicked="OnClicked" x:Name="Input3" Text="3" Grid.Column="2" Grid.Row="3" />
+            <Button Clicked="OnClicked" x:Name="InputSubtract" Text="-" Grid.Column="3" Grid.Row="3"
+                    Style="{StaticResource OperatorButton}" />
+
+            <Button Clicked="OnClicked" x:Name="Input0" Text="0" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="4" />
+            <Button Clicked="OnClicked" x:Name="InputComma" Text="," Grid.Column="2" Grid.Row="4"
+                    Style="{StaticResource OperatorButton}" />
+            <Button Clicked="OnClicked" x:Name="InputAdd" Text="+" Grid.Column="3" Grid.Row="4"
+                    Style="{StaticResource OperatorButton}" />
+
+            <Button Clicked="OnClicked" x:Name="InputC" Text="C" Grid.Column="0" Grid.Row="5"
+                    BackgroundColor="DarkGray" />
+            <Button Clicked="OnClicked" x:Name="InputEquals" Text="=" Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="5"
+                    Style="{StaticResource OperatorButton}" />
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
