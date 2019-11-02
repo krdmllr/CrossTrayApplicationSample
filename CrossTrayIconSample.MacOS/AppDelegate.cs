@@ -80,14 +80,29 @@ namespace CrossTrayIconSample.MacOS
                 _mainPage = controller;
                 controller.SetContent(Application.Current.MainPage.CreateViewController()); 
                 _mainPage.View.Frame = new CoreGraphics.CGRect(0, 0, 400, 700);
+
+                Application.Current.SendStart();
+            }
+            else
+            {
+                Application.Current.SendResume();
             }
 
             var popover = new NSPopover
             {
                 ContentViewController = _mainPage,
-                Behavior = NSPopoverBehavior.Transient
+                Behavior = NSPopoverBehavior.Transient,
+                Delegate = new PopoverDelegate()
             };
             popover.Show(_statusBarItem.Button.Bounds, _statusBarItem.Button, NSRectEdge.MaxYEdge);
+        }
+
+        class PopoverDelegate : NSPopoverDelegate
+        {
+            public override void DidClose(NSNotification notification)
+            { 
+                Application.Current.SendSleep();
+            }
         }
     }
 }
