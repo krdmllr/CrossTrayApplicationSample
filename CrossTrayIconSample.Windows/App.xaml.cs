@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Forms;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.WPF;
+using Application = Xamarin.Forms.Application;
 using Point = Xamarin.Forms.Point;
 
 namespace CrossTrayIconSample.Windows
@@ -70,6 +71,7 @@ namespace CrossTrayIconSample.Windows
                 };
                 ((FormsApplicationPage)MainWindow).LoadApplication(new Shared.App());
                 MainWindow.Closing += MainWindow_Closing;
+                Application.Current.SendStart();
             }
 
             // Hide the window when it is visible
@@ -78,6 +80,7 @@ namespace CrossTrayIconSample.Windows
                 // Hide!
                 MainWindow.Deactivated -= MainWindowOnDeactivated;
                 MainWindow.Hide();
+                Application.Current.SendSleep();
             }
             // Show the window when it is not visible
             else
@@ -90,6 +93,7 @@ namespace CrossTrayIconSample.Windows
                 MainWindow.Show();
                 MainWindow.Activate();
                 MainWindow.Deactivated += MainWindowOnDeactivated;
+                Application.Current.SendResume();
             }
         }
 
