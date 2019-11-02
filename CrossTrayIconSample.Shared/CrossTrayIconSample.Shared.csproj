@@ -5,22 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.1.0.618606" />
+    <PackageReference Include="Xamarin.Forms" Version="4.3.0.947036" />
   </ItemGroup>
 
   <ItemGroup>
     <Compile Update="CalculatorPage.xaml.cs">
       <DependentUpon>CalculatorPage.xaml</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Update="MainPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="CalculatorPage.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
   </ItemGroup>
 
 </Project>
