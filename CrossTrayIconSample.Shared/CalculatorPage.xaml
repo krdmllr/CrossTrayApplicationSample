@@ -6,7 +6,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              BackgroundColor="Black"
-             x:Class="CrossTrayIconSample.Shared.TrayPage">
+             Title="Calculator"
+             x:Class="CrossTrayIconSample.Shared.CalculatorPage">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="ButtonDefault" TargetType="{x:Type Button}">
@@ -38,7 +39,7 @@
                 <RowDefinition Height="{Binding Source={x:Reference Input7}, Path=BindingContext.WidthRequest}" />
                 <RowDefinition Height="{Binding Source={x:Reference Input7}, Path=BindingContext.WidthRequest}" />
             </Grid.RowDefinitions>
-            <Label Text="0" MaxLines="1" LineBreakMode="TailTruncation" x:Name="TotalValue" VerticalOptions="Start"
+            <Label MaxLines="1" LineBreakMode="TailTruncation" x:Name="TotalValue" VerticalOptions="Start"
                    HorizontalOptions="End" Margin="5" TextColor="White" Grid.ColumnSpan="4" FontSize="10" />
             <Label Text="0" x:Name="Value" LineBreakMode="TailTruncation" VerticalOptions="Center"
                    HorizontalOptions="End" Margin="5" TextColor="White" Grid.ColumnSpan="4" FontSize="40" />

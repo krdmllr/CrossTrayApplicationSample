@@ -5,9 +5,9 @@ using Xamarin.Forms.Xaml;
 namespace CrossTrayIconSample.Shared
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class TrayPage : ContentPage
+    public partial class CalculatorPage : ContentPage
     {
-        public TrayPage()
+        public CalculatorPage()
         {
             InitializeComponent();
         }
@@ -20,6 +20,7 @@ namespace CrossTrayIconSample.Shared
 
         private void OnClicked(object sender, EventArgs e)
         {
+            this.Navigation.PushAsync(new ContentPage());
             var button = (Button)sender;
             switch (button.Text)
             {
@@ -65,7 +66,7 @@ namespace CrossTrayIconSample.Shared
                         Value.Text = FormatToReasonableLength(_currentInput);
                         if (_inputReset)
                         {
-                            _inputReset = true;
+                            _inputReset = false;
                             _currentValue = _currentInput;
                             TotalValue.Text = FormatToReasonableLength(_currentValue);
                         }
