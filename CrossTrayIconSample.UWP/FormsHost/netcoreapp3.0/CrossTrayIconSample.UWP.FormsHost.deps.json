@@ -1,0 +1,72 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.0": {
+      "CrossTrayIconSample.UWP.FormsHost/1.0.0": {
+        "dependencies": {
+          "Microsoft.Windows.SDK.Contracts": "10.0.18362.2002-preview"
+        },
+        "runtime": {
+          "CrossTrayIconSample.UWP.FormsHost.dll": {}
+        }
+      },
+      "Microsoft.NETCore.Platforms/3.0.0-preview4.19212.13": {},
+      "Microsoft.Windows.SDK.Contracts/10.0.18362.2002-preview": {
+        "dependencies": {
+          "System.Runtime.WindowsRuntime": "4.6.0-preview4.19212.13",
+          "System.Runtime.WindowsRuntime.UI.Xaml": "4.6.0-preview4.19212.13"
+        }
+      },
+      "System.Runtime.WindowsRuntime/4.6.0-preview4.19212.13": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0-preview4.19212.13"
+        }
+      },
+      "System.Runtime.WindowsRuntime.UI.Xaml/4.6.0-preview4.19212.13": {
+        "dependencies": {
+          "Microsoft.NETCore.Platforms": "3.0.0-preview4.19212.13",
+          "System.Runtime.WindowsRuntime": "4.6.0-preview4.19212.13"
+        }
+      }
+    }
+  },
+  "libraries": {
+    "CrossTrayIconSample.UWP.FormsHost/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.NETCore.Platforms/3.0.0-preview4.19212.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-cBcFp3iIi/c6AK9F/aZxbZaNhWGOLSJD071L9tO8JbyODp38NDKsJ38Xq/KJUCt1EUIlqnyF6PdqOngFuCvD1Q==",
+      "path": "microsoft.netcore.platforms/3.0.0-preview4.19212.13",
+      "hashPath": "microsoft.netcore.platforms.3.0.0-preview4.19212.13.nupkg.sha512"
+    },
+    "Microsoft.Windows.SDK.Contracts/10.0.18362.2002-preview": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-Mpe93QNOXVKZeAJP/T/PUcXBtWaIRUi7G/Wrsl8UiI15ubFysrr8RVVTqZZIcgyVy65BaIbgqVGUPovj+nCzRw==",
+      "path": "microsoft.windows.sdk.contracts/10.0.18362.2002-preview",
+      "hashPath": "microsoft.windows.sdk.contracts.10.0.18362.2002-preview.nupkg.sha512"
+    },
+    "System.Runtime.WindowsRuntime/4.6.0-preview4.19212.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RUCWjgFxJYRdtWoo0ULHuki5XHkoiUQLSWQrNpAZHGZQ+2KIIojJ9qy5pZ1R2OG+vrNqn22ey0NSiem16N0Ukw==",
+      "path": "system.runtime.windowsruntime/4.6.0-preview4.19212.13",
+      "hashPath": "system.runtime.windowsruntime.4.6.0-preview4.19212.13.nupkg.sha512"
+    },
+    "System.Runtime.WindowsRuntime.UI.Xaml/4.6.0-preview4.19212.13": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-sm0eMAdX4itJA6z9nzxTDw9JVC5ENA8JLzqCLcRa1Ii4YZyLpLtVtKVbqUHC6kBFAqUkvA5ZEzWacMY9A0tuqA==",
+      "path": "system.runtime.windowsruntime.ui.xaml/4.6.0-preview4.19212.13",
+      "hashPath": "system.runtime.windowsruntime.ui.xaml.4.6.0-preview4.19212.13.nupkg.sha512"
+    }
+  }
+}
