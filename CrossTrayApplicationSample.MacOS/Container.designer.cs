@@ -7,7 +7,7 @@
 using Foundation;
 using System.CodeDom.Compiler;
 
-namespace CrossTrayIconSample.MacOS
+namespace CrossTrayApplicationSample.MacOS
 {
 	[Register ("Container")]
 	partial class Container

@@ -3,9 +3,9 @@
 <plist version="1.0">
 <dict>
 	<key>CFBundleName</key>
-	<string>CrossTrayIconSample.MacOS</string>
+	<string>CrossTrayApplicationSample.MacOS</string>
 	<key>CFBundleIdentifier</key>
-	<string>com.companyname.CrossTrayIconSample-MacOS</string>
+	<string>com.companyname.CrossTrayApplicationSample-MacOS</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleVersion</key>

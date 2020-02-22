@@ -1,11 +1,11 @@
 ﻿using System;
 using AppKit;
-using CrossTrayIconSample.Shared;
+using CrossTrayApplicationSample.Shared;
 using Foundation;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.MacOS;
 
-namespace CrossTrayIconSample.MacOS
+namespace CrossTrayApplicationSample.MacOS
 {
     [Register("AppDelegate")]
     public class AppDelegate : NSApplicationDelegate

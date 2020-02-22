@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossTrayIconSample.Shared", "CrossTrayIconSample.Shared\CrossTrayIconSample.Shared.csproj", "{DEA61807-5A20-4E3A-B071-5C7376C98F52}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CrossTrayApplicationSample.Shared", "CrossTrayApplicationSample.Shared\CrossTrayApplicationSample.Shared.csproj", "{DEA61807-5A20-4E3A-B071-5C7376C98F52}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossTrayIconSample.Windows", "CrossTrayIconSample.Windows\CrossTrayIconSample.Windows.csproj", "{E259B672-8A11-4390-93D8-DDB144FCF0E3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossTrayApplicationSample.Windows", "CrossTrayApplicationSample.Windows\CrossTrayApplicationSample.Windows.csproj", "{E259B672-8A11-4390-93D8-DDB144FCF0E3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossTrayIconSample.MacOS", "CrossTrayIconSample.MacOS\CrossTrayIconSample.MacOS.csproj", "{6D140294-0512-4763-8490-60296B23DC87}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrossTrayApplicationSample.MacOS", "CrossTrayApplicationSample.MacOS\CrossTrayApplicationSample.MacOS.csproj", "{6D140294-0512-4763-8490-60296B23DC87}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

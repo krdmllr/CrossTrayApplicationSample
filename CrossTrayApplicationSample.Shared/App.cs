@@ -1,7 +1,7 @@
 ﻿using System.Diagnostics;
 using Xamarin.Forms;
 
-namespace CrossTrayIconSample.Shared
+namespace CrossTrayApplicationSample.Shared
 {
     public class App : Application
     {

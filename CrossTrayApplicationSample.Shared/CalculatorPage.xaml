@@ -7,7 +7,7 @@
              mc:Ignorable="d"
              BackgroundColor="Black"
              Title="Calculator"
-             x:Class="CrossTrayIconSample.Shared.CalculatorPage">
+             x:Class="CrossTrayApplicationSample.Shared.CalculatorPage">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="ButtonDefault" TargetType="{x:Type Button}">

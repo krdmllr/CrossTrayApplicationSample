@@ -1,6 +1,6 @@
 ﻿using AppKit;
 
-namespace CrossTrayIconSample.MacOS
+namespace CrossTrayApplicationSample.MacOS
 {
     static class MainClass
     {

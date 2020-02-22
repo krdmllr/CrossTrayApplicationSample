@@ -2,10 +2,10 @@
 
 using System;
 using AppKit;
-using CrossTrayIconSample.Shared;
+using CrossTrayApplicationSample.Shared;
 using Xamarin.Forms;
 
-namespace CrossTrayIconSample.MacOS
+namespace CrossTrayApplicationSample.MacOS
 {
     public partial class Container : NSViewController
 	{

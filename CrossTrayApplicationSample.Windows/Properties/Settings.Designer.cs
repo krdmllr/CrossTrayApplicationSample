@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace CrossTrayIconSample.Windows.Properties
+namespace CrossTrayApplicationSample.Windows.Properties
 {
 
 

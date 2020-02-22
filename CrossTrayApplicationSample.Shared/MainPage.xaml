@@ -5,7 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              Title="Main page!"
-             x:Class="CrossTrayIconSample.Shared.MainPage">
+             x:Class="CrossTrayApplicationSample.Shared.MainPage">
     <ContentPage.Content>
         <StackLayout Margin="20">
             <Label Text="Hello Xamarin.Forms!" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
