@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Diagnostics;
 using AppKit;
 using CrossTrayApplicationSample.Shared;
 using Foundation;
@@ -10,31 +11,47 @@ namespace CrossTrayApplicationSample.MacOS
     [Register("AppDelegate")]
     public class AppDelegate : NSApplicationDelegate
     {
+        private NSViewController _mainPage;
         private NSStatusItem _statusBarItem;
         private NSMenu _menu;
-        private NSViewController _mainPage;
 
         public AppDelegate()
         {
             Forms.Init();
             CreateStatusItem();
             Application.SetCurrentApplication(new App());
-        }        
+        }
 
         private void CreateStatusItem()
         {
+            // Create the status bar item
             NSStatusBar statusBar = NSStatusBar.SystemStatusBar;
             _statusBarItem = statusBar.CreateStatusItem(NSStatusItemLength.Variable);
             _statusBarItem.Button.Image = NSImage.ImageNamed("TrayIcon.ico");
+            
+            // Listen to touches on the status bar item
+            _statusBarItem.Button.SendActionOn( NSEventType.OtherMouseUp);
+            _statusBarItem.Button.Activated += StatusItemActivated;
 
-            _statusBarItem.SendActionOn(NSTouchPhase.Any);
-            _statusBarItem.Action = new ObjCRuntime.Selector("MenuAction:");
-
-            _menu = new NSMenu();
-
+            // Create the menu that gets opened on a right click
+            _menu = new NSMenu(); 
             var closeAppItem = new NSMenuItem("Close");
             closeAppItem.Activated += CloseAppItem_Activated;
             _menu.AddItem(closeAppItem);
+        }
+
+        private void StatusItemActivated(object sender, EventArgs e)
+        {
+            var currentEvent = NSApplication.SharedApplication.CurrentEvent;
+            switch (currentEvent.Type)
+            {
+                case NSEventType.LeftMouseDown:
+                    ShowWindow();
+                    break;
+                case NSEventType.RightMouseDown: 
+                    _statusBarItem.PopUpStatusItemMenu(_menu);
+                    break;
+            }
         }
 
         public override void DidFinishLaunching(NSNotification notification)
@@ -50,22 +67,7 @@ namespace CrossTrayApplicationSample.MacOS
         private void CloseAppItem_Activated(object sender, EventArgs e)
         {
             NSApplication.SharedApplication.Terminate(this);
-        }
-
-        [Export("MenuAction:")]
-        public void ButtonClickAction(NSStatusItem item)
-        {
-            var currentEvent = NSApplication.SharedApplication.CurrentEvent;
-            switch (currentEvent.Type)
-            {
-                case NSEventType.LeftMouseUp:
-                    ShowWindow();
-                    break;
-                case NSEventType.RightMouseUp:
-                    _statusBarItem.PopUpStatusItemMenu(_menu);
-                    break;
-            }
-        }
+        } 
 
         private void ShowWindow()
         { 
@@ -97,7 +99,7 @@ namespace CrossTrayApplicationSample.MacOS
             popover.Show(_statusBarItem.Button.Bounds, _statusBarItem.Button, NSRectEdge.MaxYEdge);
         }
 
-        class PopoverDelegate : NSPopoverDelegate
+        public class PopoverDelegate : NSPopoverDelegate
         {
             public override void DidClose(NSNotification notification)
             { 
