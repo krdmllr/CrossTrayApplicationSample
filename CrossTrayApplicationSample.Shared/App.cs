@@ -5,9 +5,11 @@ namespace CrossTrayApplicationSample.Shared
 {
     public class App : Application
     {
-        public App()
+        public static INotificationService NotificationService = null;
+        public App(INotificationService notificationService)
         {
             MainPage = new NavigationPage(new MainPage());
+            NotificationService = notificationService;
         }
 
         protected override void OnStart()

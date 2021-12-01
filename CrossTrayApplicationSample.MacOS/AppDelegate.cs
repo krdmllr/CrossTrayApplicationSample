@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using AppKit;
 using CrossTrayApplicationSample.Shared;
 using Foundation;
@@ -19,7 +18,7 @@ namespace CrossTrayApplicationSample.MacOS
         {
             Forms.Init();
             CreateStatusItem();
-            Application.SetCurrentApplication(new App());
+            Application.SetCurrentApplication(new App(new MacosNotificationService()));
         }
 
         private void CreateStatusItem()
@@ -66,7 +65,8 @@ namespace CrossTrayApplicationSample.MacOS
 
         private void CloseAppItem_Activated(object sender, EventArgs e)
         {
-            NSApplication.SharedApplication.Terminate(this);
+            App.NotificationService.ShowNotification("macOS","we are on macos");
+            //NSApplication.SharedApplication.Terminate(this);
         } 
 
         private void ShowWindow()
