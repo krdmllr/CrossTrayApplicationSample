@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Notifications.Wpf;
+using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Forms;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.WPF;
 using Application = Xamarin.Forms.Application;
-using Point = Xamarin.Forms.Point;
 
 namespace CrossTrayApplicationSample.Windows
 {
@@ -43,7 +43,17 @@ namespace CrossTrayApplicationSample.Windows
 
         private void ExitApplication()
         {
-            _isExit = true;
+
+            var notificationManager = new NotificationManager();
+
+            notificationManager.Show(new NotificationContent
+            {
+                Title = "Sample notification",
+                Message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+                Type = NotificationType.Information
+            });
+
+            /*_isExit = true;
             if (MainWindow != null)
             {
                 MainWindow.Closing -= MainWindow_Closing;
@@ -55,7 +65,7 @@ namespace CrossTrayApplicationSample.Windows
             _notifyIcon = null;
 
             // Stop the application
-            Current.Shutdown();
+            Current.Shutdown();*/
         }
 
         /// <summary>
