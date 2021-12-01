@@ -1,5 +1,4 @@
-﻿using Notifications.Wpf;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Windows;
 using System.Windows.Forms;
@@ -15,7 +14,8 @@ namespace CrossTrayApplicationSample.Windows
     public partial class App
     { 
         private NotifyIcon _notifyIcon;
-        private bool _isExit; 
+        private bool _isExit;
+        private static Shared.App application = null;
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -27,8 +27,8 @@ namespace CrossTrayApplicationSample.Windows
             _notifyIcon.MouseUp += NotifyIconOnMouseUp;
             _notifyIcon.MouseMove += NotifyIconOnMouseMove;
             _notifyIcon.Icon = CrossTrayApplicationSample.Windows.Properties.Resources.TrayIcon;
-            _notifyIcon.Visible = true; 
-             
+            _notifyIcon.Visible = true;
+            application = new Shared.App(new WindowsNotificationService());
             CreateContextMenu();
         }
 
@@ -44,14 +44,7 @@ namespace CrossTrayApplicationSample.Windows
         private void ExitApplication()
         {
 
-            var notificationManager = new NotificationManager();
-
-            notificationManager.Show(new NotificationContent
-            {
-                Title = "Sample notification",
-                Message = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-                Type = NotificationType.Information
-            });
+            Shared.App.NotificationService.ShowNotification("windows", "we are on wiwndows");
 
             /*_isExit = true;
             if (MainWindow != null)
@@ -86,7 +79,8 @@ namespace CrossTrayApplicationSample.Windows
                     ResizeMode = ResizeMode.NoResize,
                     WindowStyle = WindowStyle.ToolWindow
                 };
-                ((FormsApplicationPage)MainWindow).LoadApplication(new Shared.App());
+                
+                ((FormsApplicationPage)MainWindow).LoadApplication(application);
                 MainWindow.Closing += MainWindow_Closing;
                 Application.Current.SendStart();
             }
