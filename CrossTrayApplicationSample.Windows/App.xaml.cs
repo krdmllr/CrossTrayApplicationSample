@@ -43,8 +43,8 @@ namespace CrossTrayApplicationSample.Windows
 
         private void ExitApplication()
         {
-
-            Shared.App.NotificationService.ShowNotification("windows", "we are on wiwndows");
+            INotificationService notificationService = DependencyService.Get<INotificationService>();
+            notificationService.ShowNotification("windows", "we are on wiwndows");
 
             /*_isExit = true;
             if (MainWindow != null)

@@ -1,6 +1,8 @@
+using Xamarin.Forms;
 using CrossTrayApplicationSample.Shared;
 using Foundation;
 
+[assembly: Dependency(typeof(CrossTrayApplicationSample.MacOS.MacosNotificationService))]
 namespace CrossTrayApplicationSample.MacOS
 {
     public class MacosNotificationService : INotificationService

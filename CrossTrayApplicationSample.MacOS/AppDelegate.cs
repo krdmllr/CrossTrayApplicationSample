@@ -18,7 +18,7 @@ namespace CrossTrayApplicationSample.MacOS
         {
             Forms.Init();
             CreateStatusItem();
-            Application.SetCurrentApplication(new App(new MacosNotificationService()));
+            Application.SetCurrentApplication(new App());
         }
 
         private void CreateStatusItem()
@@ -65,7 +65,8 @@ namespace CrossTrayApplicationSample.MacOS
 
         private void CloseAppItem_Activated(object sender, EventArgs e)
         {
-            App.NotificationService.ShowNotification("macOS","we are on macos");
+            INotificationService notificationService = DependencyService.Get<INotificationService>();
+            notificationService.ShowNotification("macOS","we are on macos");
             //NSApplication.SharedApplication.Terminate(this);
         } 
 

@@ -1,6 +1,7 @@
 ﻿using CrossTrayApplicationSample.Shared;
 using Notifications.Wpf;
 
+[assembly: Dependency(typeof(CrossTrayApplicationSample.Windows.WindowsNotificationService))]
 namespace CrossTrayApplicationSample.Windows
 {
     public class WindowsNotificationService : INotificationService
