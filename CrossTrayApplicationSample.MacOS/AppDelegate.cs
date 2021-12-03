@@ -65,9 +65,8 @@ namespace CrossTrayApplicationSample.MacOS
 
         private void CloseAppItem_Activated(object sender, EventArgs e)
         {
-            INotificationService notificationService = DependencyService.Get<INotificationService>();
-            notificationService.ShowNotification("macOS","we are on macos");
-            //NSApplication.SharedApplication.Terminate(this);
+            
+            NSApplication.SharedApplication.Terminate(this);
         } 
 
         private void ShowWindow()
