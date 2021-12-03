@@ -1,5 +1,6 @@
 ﻿using CrossTrayApplicationSample.Shared;
 using Notifications.Wpf;
+using Xamarin.Forms;
 
 [assembly: Dependency(typeof(CrossTrayApplicationSample.Windows.WindowsNotificationService))]
 namespace CrossTrayApplicationSample.Windows

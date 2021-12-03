@@ -4,6 +4,7 @@ using System.Windows;
 using System.Windows.Forms;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.WPF;
+using CrossTrayApplicationSample.Shared;
 using Application = Xamarin.Forms.Application;
 
 namespace CrossTrayApplicationSample.Windows
@@ -28,7 +29,7 @@ namespace CrossTrayApplicationSample.Windows
             _notifyIcon.MouseMove += NotifyIconOnMouseMove;
             _notifyIcon.Icon = CrossTrayApplicationSample.Windows.Properties.Resources.TrayIcon;
             _notifyIcon.Visible = true;
-            application = new Shared.App(new WindowsNotificationService());
+            application = new Shared.App();
             CreateContextMenu();
         }
 

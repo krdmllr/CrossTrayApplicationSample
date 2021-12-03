@@ -1,5 +1,3 @@
-using System;
-
 namespace CrossTrayApplicationSample.Shared
 {
     public interface INotificationService
