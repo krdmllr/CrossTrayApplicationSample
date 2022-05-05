@@ -4,8 +4,8 @@ using System.Windows;
 using System.Windows.Forms;
 using Xamarin.Forms;
 using Xamarin.Forms.Platform.WPF;
+using CrossTrayApplicationSample.Shared;
 using Application = Xamarin.Forms.Application;
-using Point = Xamarin.Forms.Point;
 
 namespace CrossTrayApplicationSample.Windows
 {
@@ -15,7 +15,8 @@ namespace CrossTrayApplicationSample.Windows
     public partial class App
     { 
         private NotifyIcon _notifyIcon;
-        private bool _isExit; 
+        private bool _isExit;
+        private static Shared.App application = null;
 
         protected override void OnStartup(StartupEventArgs e)
         {
@@ -27,8 +28,8 @@ namespace CrossTrayApplicationSample.Windows
             _notifyIcon.MouseUp += NotifyIconOnMouseUp;
             _notifyIcon.MouseMove += NotifyIconOnMouseMove;
             _notifyIcon.Icon = CrossTrayApplicationSample.Windows.Properties.Resources.TrayIcon;
-            _notifyIcon.Visible = true; 
-             
+            _notifyIcon.Visible = true;
+            application = new Shared.App();
             CreateContextMenu();
         }
 
@@ -55,7 +56,7 @@ namespace CrossTrayApplicationSample.Windows
             _notifyIcon = null;
 
             // Stop the application
-            Current.Shutdown();
+            Current.Shutdown();*/
         }
 
         /// <summary>
@@ -76,7 +77,8 @@ namespace CrossTrayApplicationSample.Windows
                     ResizeMode = ResizeMode.NoResize,
                     WindowStyle = WindowStyle.ToolWindow
                 };
-                ((FormsApplicationPage)MainWindow).LoadApplication(new Shared.App());
+                
+                ((FormsApplicationPage)MainWindow).LoadApplication(application);
                 MainWindow.Closing += MainWindow_Closing;
                 Application.Current.SendStart();
             }

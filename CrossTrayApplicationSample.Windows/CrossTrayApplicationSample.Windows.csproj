@@ -64,6 +64,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="WindowsNotificationService.cs" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -95,11 +96,20 @@
     <None Include="Resources\TrayIcon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="Notifications.Wpf">
+      <Version>0.1.1</Version>
+    </PackageReference>
+    <PackageReference Include="ToastNotifications">
+      <Version>2.5.1</Version>
+    </PackageReference>
+    <PackageReference Include="ToastNotifications.Messages">
+      <Version>2.5.1</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms">
-      <Version>4.3.0.947036</Version>
+      <Version>5.0.0.2244</Version>
     </PackageReference>
     <PackageReference Include="Xamarin.Forms.Platform.WPF">
-      <Version>4.3.0.947036</Version>
+      <Version>5.0.0.2244</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>

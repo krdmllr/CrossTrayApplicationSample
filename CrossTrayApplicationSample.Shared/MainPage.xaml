@@ -10,6 +10,7 @@
         <StackLayout Margin="20">
             <Label Text="Hello Xamarin.Forms!" VerticalOptions="CenterAndExpand" HorizontalOptions="Center" />
             <Button Clicked="GotoCalculatorClicked" Text="Goto calculator" VerticalOptions="End" HorizontalOptions="Fill" />
+            <Button Clicked="ThrowNotification" Text="Notification" VerticalOptions="End" HorizontalOptions="Fill" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

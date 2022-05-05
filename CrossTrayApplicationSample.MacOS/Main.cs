@@ -8,6 +8,8 @@ namespace CrossTrayApplicationSample.MacOS
         {
             NSApplication.Init();
             NSApplication.Main(args);
+
+            
         }
     }
 }

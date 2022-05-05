@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Diagnostics;
 using AppKit;
 using CrossTrayApplicationSample.Shared;
 using Foundation;
@@ -66,6 +65,7 @@ namespace CrossTrayApplicationSample.MacOS
 
         private void CloseAppItem_Activated(object sender, EventArgs e)
         {
+            
             NSApplication.SharedApplication.Terminate(this);
         } 
 

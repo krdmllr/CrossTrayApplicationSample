@@ -21,5 +21,11 @@ namespace CrossTrayApplicationSample.Shared
         {
             await Navigation.PushAsync(new CalculatorPage());
         }
+
+        private void ThrowNotification(object sender, EventArgs e)
+        {
+            INotificationService notificationService = DependencyService.Get<INotificationService>();
+            notificationService.ShowNotification("Testtitle", "testmessage");
+        }
     }
 }
